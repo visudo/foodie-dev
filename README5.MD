@@ -17,10 +17,8 @@
 * docker commit --author "单机_mysql" mysql_standalone mysql:v1
 * docker commit --author "单机_httpd" httpd myhttpd:v1
 
-## 容器配置源
-* 配置镜像源 /etc/apt/sources.list
-* 配置容器与外网互通 
-* 更新源 apt update -y
+## mysql无法commit出镜像
+* 参考https://blog.csdn.net/CNBDZGL/article/details/125312515
 
 
 
