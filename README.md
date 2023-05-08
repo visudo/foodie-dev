@@ -53,7 +53,7 @@ docker run -p 3307:3306 -d mysql --privileged=true
 ### 部署静态资源
 * docker pull tomcat:9.0
 * 启动 tomcat docker run -d -p 8000:8080 --name tomcat_static tomcat:9.0
-* 拷贝文件到容器 docker cp -a /Users/xxxxx/Downloads/01-天天吃货源码/前端源码/foodie-shop 6cd151ab82d6394df586d0369ddac11a49ab513ae70fd27fa844c45dd5a9bfe4:/usr/local/tomcat/webapps/ 
+* 拷贝文件到容器 docker cp -a /Users/xxxxx/Downloads/foodie-shop 6cd151ab82d6394df586d0369ddac11a49ab513ae70fd27fa844c45dd5a9bfe4:/usr/local/tomcat/webapps/ 
 * 运行前台 http://127.0.0.1:8000/foodie-shop/
 
 ### 配置前后台跨域问题
