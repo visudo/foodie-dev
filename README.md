@@ -27,7 +27,7 @@
 * 批量删除容器 for i in `docker ps -a | awk '{print$1}'`;do docker rm $i;done
 * 查看容器id  docker inspect -f '{{.ID}}' tomcat_static
 * 拷贝文件到容器 docker cp -a local_file_path container_id:container_path
-
+* 进入容器 docker exec -it 775c7c9ee1e1 /bin/bash
 ## docker 部署mysql
 * 拉取镜像  
 docker pull mysql
@@ -53,7 +53,7 @@ docker run -p 3307:3306 -d mysql --privileged=true
 ### 部署静态资源
 * docker pull tomcat:9.0
 * 启动 tomcat docker run -d -p 8000:8080 --name tomcat_static tomcat:9.0
-* 拷贝文件到容器 docker cp -a /Users/tangyanghai/Downloads/01-天天吃货源码/前端源码/foodie-shop 6cd151ab82d6394df586d0369ddac11a49ab513ae70fd27fa844c45dd5a9bfe4:/usr/local/tomcat/webapps/ 
+* 拷贝文件到容器 docker cp -a /usr/workspace/foodie/* fdda09113abc:/usr/local/tomcat/webapps/ 
 * 运行前台 http://127.0.0.1:8000/foodie-shop/
 
 ### 配置前后台跨域问题

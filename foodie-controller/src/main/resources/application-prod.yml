@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+  max-http-header-size: 80KB
+
+
+# 数据源
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.211.55.5:3307/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+
+
+

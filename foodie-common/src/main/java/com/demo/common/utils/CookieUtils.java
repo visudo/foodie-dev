@@ -214,7 +214,8 @@ public final class CookieUtils {
                     cookieBuilder.domain(domainName);
                 }
             }
-            cookieBuilder.path("/").secure(true).sameSite("None");
+           cookieBuilder.path("/");
+        //    cookieBuilder.path("/").secure(true).sameSite("None");
             response.addHeader(HttpHeaders.SET_COOKIE, cookieBuilder.build().toString());
         } catch (Exception e) {
         	 e.printStackTrace();

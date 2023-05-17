@@ -3,7 +3,6 @@ package com.demo.paycenter;
 import com.demo.common.utils.DemoJsonResult;
 import com.demo.pojo.vo.MerchantOrdersVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -45,7 +44,7 @@ public class PayCenterController {
         paymentInfoVo.setMerchantOrderId(merchantOrderId);
         paymentInfoVo.setMerchantUserId(merchantUserId);
         // 模拟使用
-        paymentInfoVo.setQrCodeUrl("http://127.0.0.1:9999/erweima.jpg");
+        paymentInfoVo.setQrCodeUrl("http://10.88.0.5:80/erweima.jpg");
         return new DemoJsonResult(paymentInfoVo);
     }
 
@@ -56,7 +55,7 @@ public class PayCenterController {
      * @throws IOException
      */
     @PostMapping("/foodie-payment/payment/createMerchantOrder")
-    public DemoJsonResult createMerchantOrder(@RequestBody MerchantOrdersVO merchantOrdersVO) throws JSONException, InterruptedException {
+    public DemoJsonResult createMerchantOrder(@RequestBody MerchantOrdersVO merchantOrdersVO) throws InterruptedException {
         // 支付中心回调客户，支付成功接口
         Thread.sleep(1000 * 10);
         HttpHeaders headers = new HttpHeaders();
@@ -65,7 +64,7 @@ public class PayCenterController {
         map.put("merchantOrderId", merchantOrdersVO.getMerchantOrderId());
         HttpEntity<Map> entity=new HttpEntity(map,headers);
         ResponseEntity<DemoJsonResult> responseEntity =
-                restTemplate.postForEntity("http://127.0.0.1:8088/orders/notifyMerchantOrderPaid", entity, DemoJsonResult.class);
+                restTemplate.postForEntity("http://api.z.demo.com:8080/orders/notifyMerchantOrderPaid", entity, DemoJsonResult.class);
 
         return DemoJsonResult.ok();
     }

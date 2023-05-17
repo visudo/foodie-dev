@@ -17,10 +17,10 @@ public class BaseController {
     public static final String FOODIE_SHOPCART = "shopcart";
 
     // 支付中心地址
-    String paymentUrl = "http://127.0.0.1:8088/foodie-payment/payment/createMerchantOrder";        // produce
+    String paymentUrl = "http://api.z.demo.com:8080/foodie-payment/payment/createMerchantOrder";        // produce
 
     // 支付中心的调用地址
-    String payReturnUrl = "http://localhost:8088/orders/notifyMerchantOrderPaid";
+    String payReturnUrl = "http://api.z.demo.com:8080/orders/notifyMerchantOrderPaid";
 
     @Autowired
     public MyOrdersService myOrdersService;

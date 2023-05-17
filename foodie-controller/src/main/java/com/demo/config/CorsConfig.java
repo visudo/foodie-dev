@@ -18,7 +18,11 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         //1、添加cors配置信息
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://127.0.0.1:8000");
+        config.addAllowedOrigin("http://192.168.0.2:8080");
+        config.addAllowedOrigin("http://shop.z.demo.com:8080");
+        config.addAllowedOrigin("http://center.z.demo.com:8080");
+        config.addAllowedOrigin("http://shop.z.demo.com");
+        config.addAllowedOrigin("http://center.z.demo.com");
         //设置是否发送cookie信息
         config.setAllowCredentials(true);
         //设置允许请求的方式
