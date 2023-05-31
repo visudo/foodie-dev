@@ -22,7 +22,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/META-INF/resources/")  //映射swagger2
-                .addResourceLocations("file:/Users/tangyanghai/Downloads/images/");  //映射本地静态资源
+                .addResourceLocations("file:/opt/images/");  //映射本地静态资源
     }
 
     @Bean
