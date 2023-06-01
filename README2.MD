@@ -6,7 +6,7 @@
   httpd文件服务位置/var/www/html/
     
 * 拷贝文件到httpd服务器
-  docker cp -a /Users/tangyanghai/Downloads/chengzi.jpeg 9d97b77152c60b780bc01d6c6b51b4b40de853e3c148c3e6a96ebe8ff59bb4c3:/usr/local/apache2/htdocs/
+  docker cp -a /Users/xxxxx/Downloads/chengzi.jpeg 9d97b77152c60b780bc01d6c6b51b4b40de853e3c148c3e6a96ebe8ff59bb4c3:/usr/local/apache2/htdocs/
 
 ## 生成轮播图
 * CarouselService carousel接口实现
